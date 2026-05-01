@@ -104,7 +104,7 @@ app.get("/pdca", (req, res) => {
   res.sendFile(path.resolve("public/pdca.html"));
 });
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 import http from "http";
 import { Server } from "socket.io";
