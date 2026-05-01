@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>DECISION ×AI</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<div><strong>DECISION</strong> ×AI</div>
+
+<div>Powering Collective Intelligence</div>
+
+</header>
+
+
+<div class="container">
+
+
+<!-- LEFT -->
+
+<div class="left">
+
+<h3>Logs</h3>
+
+<button onclick="clearLogs()">Clear Logs</button>
+
+<div class="log-box" id="logBox"></div>
+
+</div>
+
+
+
+<!-- CENTER -->
+
+<div class="center">
+
+
+<div class="agenda">
+
+<input id="agendaInput" placeholder="Agenda">
+
+<textarea id="contextInput" placeholder="Purpose / Context"></textarea>
+
+<button onclick="createAgenda()">Create</button>
+
+</div>
+
+
+
+<div class="canvas" id="decisionCanvas" contenteditable="true">
+
+Decision Canvas
+
+</div>
+
+
+
+<div class="phase-buttons">
+
+<button onclick="setPhase('P')">P</button>
+
+<button onclick="setPhase('D')">D</button>
+
+<button onclick="setPhase('C')">C</button>
+
+<button onclick="setPhase('A')">A</button>
+
+</div>
+
+
+
+<div style="display:flex; gap:6px;">
+  <button class="commit-btn" onclick="commitDecision()">
+    Commit Decision
+  </button>
+
+  <button onclick="clearCanvasMedia()" style="width:40px;">
+    ×
+  </button>
+</div>
+
+
+
+
+<div class="ai-wrapper">
+
+<div class="ai-display" id="aiDisplay">
+</div>
+
+
+<div class="ai-input">
+
+<textarea id="aiInput"></textarea>
+
+<button onclick="sendAI()">↑</button>
+
+<button onclick="clearAIInput()">×</button>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+
+<!-- RIGHT -->
+
+<div class="right">
+
+
+<div class="section">
+
+<h4>Chat</h4>
+
+<div class="box" id="chatBox"></div>
+
+<div class="input-area">
+
+<textarea id="chatInput"></textarea>
+
+<button class="small-btn" onclick="sendChat()">↑</button>
+
+<button class="small-btn" onclick="clearChatInput()">×</button>
+
+</div>
+
+<button onclick="summarizeChat()">Summarize</button>
+
+</div>
+
+
+
+<div class="section">
+
+<h4>Pre Comment</h4>
+
+<div class="box" id="preCommentBox"></div>
+
+<div class="input-area">
+
+<textarea id="preCommentInput"></textarea>
+
+<button class="small-btn" onclick="sendPreComment()">↑</button>
+
+<button class="small-btn" onclick="clearPreCommentInput()">×</button>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="main.js"></script>
+
+</body>
+</html>
+
+

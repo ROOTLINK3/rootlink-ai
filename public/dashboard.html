@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h2>Join Room</h2>
+
+<input id="usernameInput" placeholder="Your name" />
+<input id="roomInput" placeholder="Room ID" />
+
+<button onclick="enterRoom()">Join</button>
+
+<script>
+function enterRoom(){
+  const name = document.getElementById("usernameInput").value.trim();
+  let room = document.getElementById("roomInput").value.trim();
+
+  if (!name) {
+    alert("名前を入力");
+    return;
+  }
+
+  if (!room) {
+    room = "default";
+  }
+
+  localStorage.setItem("username", name);
+
+  window.location.href = `/pdca?room=${room}`;
+}
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
