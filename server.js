@@ -18,7 +18,7 @@ app.use(express.static("public"));
 
 // ルート
 app.get("/", (req, res) => {
-  res.sendFile(path.resolve("public/dashboard.html"));
+  res.sendFile(path.join(process.cwd(), "public", "dashboard.html"));
 });
 
 app.get("/api", (req, res) => {
